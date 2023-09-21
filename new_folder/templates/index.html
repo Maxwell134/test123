@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Database</title>
+</head>
+<body>
+    <h1>Welcome to the Movie Database</h1>
+    <ul>
+        <li><a href="{{ url_for('add_movie') }}">Add Movie</a></li>
+    </ul>
+
+    <h2>Movie List:</h2>
+    <ul>
+        {% for title, movie in movies.items() %}
+            <li>
+                {{ title }}
+                <a href="{{ url_for('display_movie', title=title) }}">Display</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
